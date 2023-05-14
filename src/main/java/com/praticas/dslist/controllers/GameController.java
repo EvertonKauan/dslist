@@ -1,10 +1,12 @@
 package com.praticas.dslist.controllers;
 
+import com.praticas.dslist.dto.GameDTO;
 import com.praticas.dslist.dto.GameMinDTO;
 import com.praticas.dslist.services.GameService;
 import com.praticas.dslist.entities.Game;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
@@ -14,6 +16,12 @@ import java.util.List;
 public class GameController {
     @Autowired
     private GameService gameService;
+
+    @GetMapping(value = "/{id}")
+    public GameDTO findById(@PathVariable Long id) {
+        GameDTO result = gameService.findById(id);
+        return result;
+    }
     @GetMapping
     public List<GameMinDTO> findAll() {
         List<GameMinDTO> result = gameService.findAll();
