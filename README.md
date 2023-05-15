@@ -7,4 +7,3 @@ Projeto de estudo, com intuito de praticar as tecnologias listadas abaixo.
 * Springboot.
 * Maven.
 * Banco de dados H2
-* Banco de dados Postgress
