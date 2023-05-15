@@ -3,7 +3,6 @@ package com.praticas.dslist.controllers;
 import com.praticas.dslist.dto.GameDTO;
 import com.praticas.dslist.dto.GameMinDTO;
 import com.praticas.dslist.services.GameService;
-import com.praticas.dslist.entities.Game;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

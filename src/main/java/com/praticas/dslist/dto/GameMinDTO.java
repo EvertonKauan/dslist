@@ -5,7 +5,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import com.praticas.dslist.entities.Game;
-
 public class GameMinDTO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

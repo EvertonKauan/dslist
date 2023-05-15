@@ -1,11 +1,9 @@
 package com.praticas.dslist.controllers;
 
 import com.praticas.dslist.dto.GameMinDTO;
+import com.praticas.dslist.dto.ReplacementDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.praticas.dslist.services.GameService;
 import com.praticas.dslist.dto.GameListDTO;
 import com.praticas.dslist.services.GameListService;
@@ -32,5 +30,10 @@ public class GameListController {
     public List<GameMinDTO> findGames(@PathVariable Long listId) {
         List<GameMinDTO> result = gameService.findByGameList(listId);
         return result;
+    }
+
+    @PostMapping(value = "/{listId}/replacement")
+    public void move(@PathVariable Long listId, @RequestBody ReplacementDTO body) {
+        gameListService.move(listId, body.getSourceIndex(), body.getSourceIndex());
     }
 }

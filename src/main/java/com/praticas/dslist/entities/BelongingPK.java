@@ -3,6 +3,7 @@ package com.praticas.dslist.entities;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import com.praticas.dslist.entities.Game;
 
 import java.util.Objects;
 
